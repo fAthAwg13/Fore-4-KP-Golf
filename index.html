@@ -44,6 +44,17 @@ h1 b{color:var(--lime);font-weight:400}
 .btn.p:hover{filter:brightness(1.1)}
 .btn.s{border-color:var(--gold);color:var(--gold)}
 .btn.s:hover{background:var(--gold);color:var(--lime-ink)}
+.btn.d{background:var(--gold);color:var(--lime-ink)}
+.btn.d:hover{filter:brightness(1.08)}
+nav .btn{padding:7px 14px;font-size:14px}
+.tipline{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px;padding:16px 20px;border:1px solid rgba(255,200,61,.45);background:rgba(255,200,61,.07);border-radius:12px}
+.tipline p{margin:0;color:#e9dfc0}
+.donate .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;text-align:left}
+.donate .wrap p{margin:0 0 24px}
+.qr{justify-self:center;text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.qr img{display:block;width:180px;height:180px;border-radius:8px;background:#fff}
+.qr span{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.donate .wrap{grid-template-columns:1fr;text-align:center}.qr{display:none}}
 .small{font-size:13px;color:var(--muted);margin-top:12px}
 @media(max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-top:32px;text-align:center}.cta{justify-content:center}.lede{margin-left:auto;margin-right:auto}.hero img.cover{max-width:240px;transform:none}}
 
@@ -85,7 +96,8 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   <a class="l" href="#courses">Courses</a>
   <a class="l" href="#install">Install</a>
   <a class="l" href="#controls">Controls</a>
-  <a class="btn p" style="padding:7px 14px;font-size:14px" href="#download">Download</a>
+  <a class="btn d" href="#support">♥ Donate</a>
+  <a class="btn p" href="#download">Download</a>
 </div></nav>
 
 <header class="hero" id="download"><div class="wrap">
@@ -96,9 +108,9 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
     <p class="lede">Pull the plunger, let it fly. Three original 9-hole courses, 1–4 players, wind, water and sloping greens — built to run natively on the AtGames Legends Pinball 4K through General Loader 2.0.</p>
     <div class="cta">
       <a class="btn p" href="https://github.com/fAthAwg13/Fore-4-KP-Golf/releases/latest/download/ForeKPGolf-v1.3f-1.zip">⬇ Download v1.3f</a>
-      <a class="btn s" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate</a>
+      <a class="btn d" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate</a>
     </div>
-    <p class="small">2.7 MB zip · <a href="https://github.com/fAthAwg13/Fore-4-KP-Golf/releases">All versions &amp; changelog</a></p>
+    <p class="small">Free to play · tips keep new courses coming · 2.7 MB zip ·<a href="https://github.com/fAthAwg13/Fore-4-KP-Golf/releases">All versions &amp; changelog</a></p>
   </div>
 </div></header>
 
@@ -152,6 +164,10 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
     <li><b>First launch:</b> the <i>Set Up Controls</i> screen asks you to press the button you want for each action, then pull the plunger. You can run it again any time from the pause menu.</li>
   </ol>
   <p class="small">Picture upside down? Use Pause › Flip screen 180, or set <code>playfield_rotation = 270</code> in <code>forekp.ini</code>. Every option is listed in the included README.</p>
+  <div class="tipline">
+    <p><b>Up and running?</b> If Fore(4)KP Golf earns a spot on your cabinet, you can buy fAthAwg a round.</p>
+    <a class="btn d" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate</a>
+  </div>
 </div></section>
 
 <section id="controls"><div class="wrap">
@@ -175,11 +191,17 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   </div>
 </div></section>
 
-<section class="donate"><div class="wrap">
+<section class="donate" id="support"><div class="wrap">
+  <div>
   <h2>Enjoying it?</h2>
   <p>Fore(4)KP Golf is free and always will be. If it's earned a spot on your cabinet, a tip helps fund new courses and more 4KP games.</p>
-  <a class="btn s" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate with PayPal</a>
-  <p class="small" style="margin-top:22px">Found a bug? <a href="https://github.com/fAthAwg13/Fore-4-KP-Golf/issues">Open an issue</a> and attach <code>forekp.log</code> and <code>forekp-input.log</code> (Pause › System Info shows where they are).</p>
+  <a class="btn d" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate with PayPal</a>
+  </div>
+  <div class="qr"><img src="paypal-qr.webp" alt="PayPal donate QR code" width="180" height="180"><span>Or scan with your phone</span></div>
+</div></section>
+
+<section style="padding:28px 0"><div class="wrap" style="text-align:center">
+  <p class="small" style="margin:0">Found a bug? <a href="https://github.com/fAthAwg13/Fore-4-KP-Golf/issues">Open an issue</a> and attach <code>forekp.log</code> and <code>forekp-input.log</code> (Pause › System Info shows where they are).</p>
 </div></section>
 
 <footer><div class="wrap">
