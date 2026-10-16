@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/cover.webp" width="260" alt="Fore(4)KP Golf"></p>
+<p align="center"><img src="cover.webp" width="260" alt="Fore(4)KP Golf"></p>
 
 # Fore(4)KP Golf
 
