@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fore(4)KP Golf</title>
+<meta name="description" content="Fore(4)KP Golf by fAthAwg: free arcade golf for the AtGames Legends Pinball 4K. Three courses, 1-4 players, plunger swing.">
+<meta property="og:title" content="Fore(4)KP Golf">
+<meta property="og:description" content="Free arcade golf for the AtGames Legends Pinball 4K, by fAthAwg.">
+<meta property="og:image" content="https://fathawg13.github.io/Fore-4-KP-Golf/assets/cover.webp">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b120c; --panel:#121d13; --line:#24382a; --ink:#eef5ee; --muted:#9db3a1;
+  --lime:#7ee04a; --lime-ink:#0b120c; --gold:#ffc83d; --sky:#5aa9e6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+a{color:var(--lime)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+nav{position:sticky;top:0;z-index:5;background:rgba(11,18,12,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:56px}
+nav .brand{font-family:Bungee,sans-serif;color:var(--ink);text-decoration:none;font-size:18px;margin-right:auto}
+nav .brand b{color:var(--lime);font-weight:400}
+nav a.l{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+nav a.l:hover{color:var(--ink)}
+@media(max-width:620px){nav a.l{display:none}}
+
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/cover.webp) center 30%/cover;filter:blur(18px) brightness(.35) saturate(1.2);transform:scale(1.15)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:64px}
+.hero img.cover{width:100%;height:auto;max-width:340px;border-radius:18px;border:2px solid var(--line);transform:rotate(-2deg);justify-self:center;filter:drop-shadow(0 18px 40px rgba(0,0,0,.6))}
+.ver{display:inline-block;font-weight:800;font-size:13px;letter-spacing:.08em;color:var(--lime-ink);background:var(--gold);padding:3px 10px;border-radius:99px}
+h1{font-family:Bungee,sans-serif;font-weight:400;font-size:clamp(34px,6vw,58px);line-height:1.05;margin:14px 0 12px}
+h1 b{color:var(--lime);font-weight:400}
+.lede{font-size:18px;color:#d3e2d5;margin:0 0 26px;max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:800;text-decoration:none;font-size:16px;border:2px solid transparent}
+.btn.p{background:var(--lime);color:var(--lime-ink)}
+.btn.p:hover{filter:brightness(1.1)}
+.btn.s{border-color:var(--gold);color:var(--gold)}
+.btn.s:hover{background:var(--gold);color:var(--lime-ink)}
+.small{font-size:13px;color:var(--muted);margin-top:12px}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-top:32px;text-align:center}.cta{justify-content:center}.lede{margin-left:auto;margin-right:auto}.hero img.cover{max-width:240px;transform:none}}
+
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font-family:Bungee,sans-serif;font-weight:400;font-size:28px;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:#c6d6c8}
+
+.course{border-top:4px solid var(--c)}
+.course .par{font-weight:800;color:var(--c);font-size:13px;letter-spacing:.08em}
+.course ol{margin:12px 0 0;padding-left:22px;color:#c6d6c8;font-size:14px}
+.course li span{color:var(--muted)}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px 16px 62px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:32px;height:32px;border-radius:50%;background:var(--lime);color:var(--lime-ink);font-weight:800;display:grid;place-items:center}
+pre{background:#060a07;border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font-size:14px;margin:10px 0 0;color:#cfe8d0}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700;white-space:nowrap;color:var(--lime);width:38%}
+
+.donate{text-align:center;background:linear-gradient(180deg,var(--panel),var(--bg))}
+.donate p{max-width:36em;margin:0 auto 24px;color:#c6d6c8}
+footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#">FORE<b>(4)</b>KP</a>
+  <a class="l" href="#courses">Courses</a>
+  <a class="l" href="#install">Install</a>
+  <a class="l" href="#controls">Controls</a>
+  <a class="btn p" style="padding:7px 14px;font-size:14px" href="#download">Download</a>
+</div></nav>
+
+<header class="hero" id="download"><div class="wrap">
+  <img class="cover" src="assets/cover.webp" alt="Fore(4)KP Golf title screen" width="640" height="960">
+  <div>
+    <span class="ver">v1.3f · FREE</span>
+    <h1>Arcade golf for your <b>4KP</b></h1>
+    <p class="lede">Pull the plunger, let it fly. Three original 9-hole courses, 1–4 players, wind, water and sloping greens — built to run natively on the AtGames Legends Pinball 4K through General Loader 2.0.</p>
+    <div class="cta">
+      <a class="btn p" href="https://github.com/fAthAwg13/Fore-4-KP-Golf/releases/latest/download/ForeKPGolf-v1.3f.zip">⬇ Download v1.3f</a>
+      <a class="btn s" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate</a>
+    </div>
+    <p class="small">2.7 MB zip · <a href="https://github.com/fAthAwg13/Fore-4-KP-Golf/releases">All versions &amp; changelog</a></p>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <h2>What's in the bag</h2>
+  <p class="sub">A full golf game that uses every screen and control on the cabinet.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Plunger swing</h3><p>Pull back to set power, ease it to fine-tune, let go to swing. Prefer buttons? The classic 3-tap meter is there too.</p></div>
+    <div class="card"><h3>1–4 players</h3><p>Turn-based play with coloured balls, 3-letter initials and best rounds saved for every course.</p></div>
+    <div class="card"><h3>Three screens</h3><p>The course on the playfield, a full-colour shot dashboard on the DMD, scorecard and hole map on the backglass.</p></div>
+    <div class="card"><h3>Real ball physics</h3><p>Wind that changes every hole, lies, elevation, trees, bunkers, water, and a flagstick you can chip in off.</p></div>
+    <div class="card"><h3>Easy mode</h3><p>No timing — just aim and set strength, with a landing marker that follows your pull. Great for guests.</p></div>
+    <div class="card"><h3>Learns your cabinet</h3><p>A first-launch setup records whatever your buttons and plunger actually send, so it works on your 4KP as-is.</p></div>
+  </div>
+</div></section>
+
+<section id="courses"><div class="wrap">
+  <h2>The courses</h2>
+  <p class="sub">27 holes, all with pinball names. More courses are on the way.</p>
+  <div class="grid g3">
+    <div class="card course" style="--c:#7ee04a">
+      <div class="par">PAR 36 · MOUNTAIN</div><h3>Silverball Pines</h3>
+      <p>Tall pines, lakes and big drops — elevated tees, blind crests and a mountain-top green.</p>
+      <ol><li>Opening Ball <span>4</span></li><li>Jackpot Lake <span>3</span></li><li>The Long Ramp <span>5</span></li><li>Multiball <span>4</span></li><li>Tilt <span>4</span></li><li>Extra Ball <span>3</span></li><li>Skill Shot <span>4</span></li><li>Spinner <span>4</span></li><li>Replay <span>5</span></li></ol>
+    </div>
+    <div class="card course" style="--c:#5aa9e6">
+      <div class="par">PAR 36 · SEASIDE</div><h3>Outlane Shores</h3>
+      <p>Links golf with palms, dunes and open ocean along every hole. The beach plays as sand.</p>
+      <ol><li>Plunger Lane <span>4</span></li><li>Ball Drain <span>3</span></li><li>Outlane <span>5</span></li><li>Slingshot Sands <span>4</span></li><li>Lighthouse Lock <span>3</span></li><li>Lagoon Loop <span>4</span></li><li>Wave Ramp <span>5</span></li><li>Bumper Bay <span>4</span></li><li>Last Ball <span>4</span></li></ol>
+    </div>
+    <div class="card course" style="--c:#f08a4b">
+      <div class="par">PAR 36 · DESERT</div><h3>Mesa Multiball</h3>
+      <p>Target golf among mesas, saguaros and oasis ponds. Boulders bounce hard; cactus knocks you down.</p>
+      <ol><li>Ball Launch <span>4</span></li><li>Oasis Orbit <span>3</span></li><li>Canyon Combo <span>5</span></li><li>Rattler Ramp <span>4</span></li><li>Dust Devil Drain <span>4</span></li><li>Butte Bonus <span>3</span></li><li>Mirage Kickback <span>4</span></li><li>Sidewinder Spinner <span>4</span></li><li>High Noon Wizard <span>5</span></li></ol>
+    </div>
+  </div>
+</div></section>
+
+<section id="install"><div class="wrap">
+  <h2>Install</h2>
+  <p class="sub">About two minutes with a USB stick.</p>
+  <ol class="steps">
+    <li><b>Download</b> the zip above and unzip it. You'll get a folder called <code>forekp</code>.</li>
+    <li><b>Copy the whole folder</b> into the <code>external</code> folder on the root of your USB stick:
+<pre><code>/external/forekp/forekp.elf
+/external/forekp/forekp.png
+/external/forekp/forekp.xml
+/external/forekp/forekp.ini
+/external/forekp/README.txt</code></pre></li>
+    <li><b>Plug the stick into your 4KP</b> and launch <b>Fore(4)KP Golf</b> from General Loader.</li>
+    <li><b>First launch:</b> the <i>Set Up Controls</i> screen asks you to press the button you want for each action, then pull the plunger. You can run it again any time from the pause menu.</li>
+  </ol>
+  <p class="small">Picture upside down? Use Pause › Flip screen 180, or set <code>playfield_rotation = 270</code> in <code>forekp.ini</code>. Every option is listed in the included README.</p>
+</div></section>
+
+<section id="controls"><div class="wrap">
+  <h2>Controls</h2>
+  <p class="sub">Suggested layout — the setup screen lets you choose your own.</p>
+  <div class="grid g2">
+    <div class="card"><table>
+      <tr><td>D-pad left / right</td><td>Aim (hold to turn faster)</td></tr>
+      <tr><td>D-pad up / down</td><td>Longer / shorter club</td></tr>
+      <tr><td>Plunger</td><td>Pull to set power, let go to swing</td></tr>
+      <tr><td>Forward nudge</td><td>Fire (meter swing)</td></tr>
+      <tr><td>Start</td><td>Start game / pause menu</td></tr>
+      <tr><td>Menu (hold 2 s)</td><td>Quit the game</td></tr>
+    </table></div>
+    <div class="card">
+      <h3>Plunger swing</h3>
+      <p>Pull back for power; ease forward or back to fine-tune. The shot goes when you let go. Release while the marker is in the green zone of the tempo bar for a straight shot.</p>
+      <h3 style="margin-top:16px">Meter swing</h3>
+      <p>Tap 1 starts, tap 2 sets power, tap 3 on the line for accuracy — early hooks, late slices. In Easy mode, just two taps.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="donate"><div class="wrap">
+  <h2>Enjoying it?</h2>
+  <p>Fore(4)KP Golf is free and always will be. If it's earned a spot on your cabinet, a tip helps fund new courses and more 4KP games.</p>
+  <a class="btn s" href="https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ" target="_blank" rel="noopener">♥ Donate with PayPal</a>
+  <p class="small" style="margin-top:22px">Found a bug? <a href="https://github.com/fAthAwg13/Fore-4-KP-Golf/issues">Open an issue</a> and attach <code>forekp.log</code> and <code>forekp-input.log</code> (Pause › System Info shows where they are).</p>
+</div></section>
+
+<footer><div class="wrap">
+  Fore(4)KP Golf © 2026 fAthAwg · Game, code and logo by fAthAwg<br>
+  Not affiliated with AtGames. Uses SDL2 (zlib), DejaVu Sans (Bitstream Vera license), stb (public domain).
+</div></footer>
+
+</body>
+</html>
