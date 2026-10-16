@@ -13,7 +13,7 @@ Free arcade golf for the **AtGames Legends Pinball 4K**, by **fAthAwg**. It runs
 
 ## Install
 
-1. Download `ForeKPGolf-v1.3f.zip` from [Releases](https://github.com/fAthAwg13/Fore-4-KP-Golf/releases/latest) and unzip it.
+1. Download the zip from [Releases](https://github.com/fAthAwg13/Fore-4-KP-Golf/releases/latest) and unzip it.
 2. Copy the `forekp` folder into `/external/` on your USB stick.
 3. Launch **Fore(4)KP Golf** from General Loader. On first launch, a setup screen learns your buttons and plunger.
 
