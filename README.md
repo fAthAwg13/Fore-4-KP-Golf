@@ -4,7 +4,7 @@
 
 Free arcade golf for the **AtGames Legends Pinball 4K**, by **fAthAwg**. It runs natively through General Loader 2.0.
 
-**[Website](https://fathawg13.github.io/Fore-4-KP-Golf/) · [Download the latest release](https://github.com/fAthAwg13/Fore-4-KP-Golf/releases/latest) · [Donate](https://www.paypal.com/qrcodes/p2pqrc/8WFUTNYY9S9BJ)**
+**[Website](https://fathawg13.github.io/Fore-4-KP-Golf/) · [Download the latest release](https://github.com/fAthAwg13/Fore-4-KP-Golf/releases/latest) · [Donate](https://paypal.me/HarleyJK)**
 
 - Plunger swing: pull for power, release to hit. The classic 3-tap meter swing is also included.
 - 1–4 players with initials entry and saved best rounds.
